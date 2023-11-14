@@ -1,8 +1,13 @@
-# typescript-base
+# Webauth Vanilla JS
 
-A base which makes it easy for me to initialize typescript projects. Includes:
+Trying to implement Webauthn in Vanilla JS (Frontend).
 
-* `tsconfig.json`
-* `ava` for testing
-* Tests written in typescript, compiled to JS for the runner
-* Example test
+For the backend we use express for simplicity, but in reality it could be anything, since browserland is the main focus.
+
+## Goals
+
+Try and avoid the complication of the various third party libraries for WebAuthn, and demystify the process of how it works.
+
+## Devlog
+
+You can check it out here: [Devlog](./devlog.md)
