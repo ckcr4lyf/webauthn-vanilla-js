@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <script src="./cbor.js"></script>
+    <title>Example Yubikey Registration</title>
+</head>
+<body>
+    <h1>Example Yubikey Registration</h1>
+    <div>
+        <p>Pure "offline" / FE only example of Yubikey registration & authentication as a demo</p>
+    </div>
+    <div>
+        <h3>Registration</h3>
+        <form>
+            <label for="">Enter the challenge (ASCII ideally)</label><input type="text" id="challenge"><br />
+            <!-- <label for="">Enter the User ID (ASCII ideally)</label><input type="text" id="user_id"><br />
+            <label for="">Enter the challenge (ASCII ideally)</label><input type="text" id="challenge"><br /> -->
+            <button onclick="register()" type="button">Register</button>
+        </form>
+    </div>
+</body>
+</html>
