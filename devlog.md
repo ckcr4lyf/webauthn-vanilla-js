@@ -20,4 +20,18 @@ TODO: Talk about the browser's role in this, and how registration works.
 
 During registration, the remote server has no idea about your Yubikey. It will just present a challenge, which you would then sign with your Private key, and send that back to the server, along with your Public key. This will allow it to check that the public key matches the signature, to verify future signatures as belonging to you.
 
+During registration, your browser prompts your device to "create a credential", and provides the ID of the website (the `rpId`). 
+
+The device (e.g. Yubikey) then generates a Public/Private key (TBD: How this FIDO stuff works). And then sends the public key to the server.
+
+Note: It seems in this step nothing (E.g. the challenge) is signed! So the browser / client needs to be trusted. (I guess always...?)
+
+### WebAuth Authentication
+
+Now, the backend gives the browser (website) a challenge (e.g. `0xDEADBEEF`), and a "Key ID". This tells the authenticator which key to use.
+
+The yubikey will then sign the challenge with the private key, which the browser can send to the server.
+
+The server then checks the signature to make sure it's legit.
+
 ## Resources
