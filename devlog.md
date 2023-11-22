@@ -41,16 +41,16 @@ We log several things during registration, amongst them the public key, for inst
 We can verify this is an Ed25519 public key using OpenSSL:
 
 ```
-$ echo -n "MCowBQYDK2VwAyEANKuqUjT0Mg7B7dSSoVaI4nNtA5jUTjvLTyyZMlYF+Jo=" | base64 -d | openssl ec -pubin -pubout -text
+$ echo -n "MCowBQYDK2VwAyEAfP8osGAz1XmwKPJZfQnx+hYGpsLX27iHkJL7GbkHYCg=" | base64 -d | openssl ec -pubin -pubout -text
 read EC key
 ED25519 Public-Key:
 pub:
-    34:ab:aa:52:34:f4:32:0e:c1:ed:d4:92:a1:56:88:
-    e2:73:6d:03:98:d4:4e:3b:cb:4f:2c:99:32:56:05:
-    f8:9a
+    7c:ff:28:b0:60:33:d5:79:b0:28:f2:59:7d:09:f1:
+    fa:16:06:a6:c2:d7:db:b8:87:90:92:fb:19:b9:07:
+    60:28
 writing EC key
 -----BEGIN PUBLIC KEY-----
-MCowBQYDK2VwAyEANKuqUjT0Mg7B7dSSoVaI4nNtA5jUTjvLTyyZMlYF+Jo=
+MCowBQYDK2VwAyEAfP8osGAz1XmwKPJZfQnx+hYGpsLX27iHkJL7GbkHYCg=
 -----END PUBLIC KEY-----
 ```
 

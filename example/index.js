@@ -57,8 +57,8 @@ async function verify() {
             challenge: challengeBytes,
             allowCredentials: [{
                 type: "public-key",
-                // Corresponding public key: "MCowBQYDK2VwAyEANKuqUjT0Mg7B7dSSoVaI4nNtA5jUTjvLTyyZMlYF+Jo=" (Should be ed25519?)
-                id: base64ToBytes("9oug+qe0hQan3bUSoM3Rt4h6yFGvbU1V2fiPqVD+BMYxqr31fYXSWBTJmt2o7OxLtKEfUa3EGvEXWtqT3dQO/rkJk5DcO5Sz3ynecWR75iQEzBe2XEWppFszsHF9NczUMa6aVevdQePMFZbb3017bw3vPXk8kMHZUTSLJydkehI="),
+                // Corresponding public key: "MCowBQYDK2VwAyEAfP8osGAz1XmwKPJZfQnx+hYGpsLX27iHkJL7GbkHYCg=" (Should be ed25519?)
+                id: base64ToBytes("hF6IQhNB0R3gOGR1Fc0/jgOeSxrMHwyatoRz1l2f8beOWFa19bn43mEmnld6z8+/iCVh93hn4O2ZqFxiAobFrjmFF/s64GsQUPGYNPFLgwyPlrp78G5i+FzqxOCWzQa3vzHC6q5+xIDZkD9NGBEpvGLiuLP87/rqREJqwN0k2sU="),
                 // id: new Uint8Array([207,59,97,244,128,117,138,78,184,57,43,45,75,57,222,191,249,225,61,253,72,23,107,214,185,229,223,113,118,155,227,105,93,224,82,14,23,60,53,13,117,2,98,9,10,216,160,179,197,97,225,4,133,196,69,5,189,209,17,208,97,17,23,196,99,22,247,86,167,163,13,99,223,234,149,88,67,62,218,100,104,122,134,131,123,162,16,132,80,190,108,1,101,142,122,18,0,211,120,114,63,7,19,22,126,161,98,62,75,85,138,121,15,112,71,45,191,220,244,187,29,197,189,209,103,94,182,217])
             }],
             userVerification: "required",
