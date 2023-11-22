@@ -6,7 +6,7 @@ AUTHDATA64="SZYN5YgOjGh0NBcPZHZgW4/krrmihjLHmVzzuoMdl2MBAAAAFg=="
 SIG64="jqujngcPpg7HegS6L9OucK7E83dKNcvBcsWjSSgf2CmyjEGR/nQx+ai9tCLgay8nFuV4zBlfxcIi/ClXR0NXCg=="
 
 # Output public key
-echo $KEY64 | base64 -d | openssl ec -publin -pubout -out public.pem
+echo $KEY64 | base64 -d | openssl ec -pubin -pubout -out public.pem
 
 # Raw bytes of SHA256 hash of cData
 echo $CDATA64 | base64 -d | sha256sum | cut -c-64 | xxd -r -p > raw_sha
