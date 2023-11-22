@@ -76,9 +76,13 @@ async function verify() {
 
     var c64 = bytesToBase64(new Uint8Array(cData));
     var cJSON = JSON.parse(decoder.decode(cData));
-    console.log(`cData as b64: ${c64}`);
     console.log(cJSON); // { .challenge, .origin, .type }
+    console.log('\n');
+    console.log(`cData as b64: ${c64}`);
 
     var auth64 = bytesToBase64(new Uint8Array(authData));
     console.log(`authData as b64: ${auth64}`);
+
+    var sig64 = bytesToBase64(new Uint8Array(signature));
+    console.log(`signature as b64: ${sig64}`);
 }
