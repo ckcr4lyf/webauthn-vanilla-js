@@ -34,4 +34,24 @@ The yubikey will then sign the challenge with the private key, which the browser
 
 The server then checks the signature to make sure it's legit.
 
+## 2023-11-22
+
+We log several things during registration, amongst them the public key, for instance:`9oug+qe0hQan3bUSoM3Rt4h6yFGvbU1V2fiPqVD+BMYxqr31fYXSWBTJmt2o7OxLtKEfUa3EGvEXWtqT3dQO/rkJk5DcO5Sz3ynecWR75iQEzBe2XEWppFszsHF9NczUMa6aVevdQePMFZbb3017bw3vPXk8kMHZUTSLJydkehI=`
+
+We can verify this is an Ed25519 public key using OpenSSL:
+
+```
+$ echo -n "MCowBQYDK2VwAyEANKuqUjT0Mg7B7dSSoVaI4nNtA5jUTjvLTyyZMlYF+Jo=" | base64 -d | openssl ec -pubin -pubout -text
+read EC key
+ED25519 Public-Key:
+pub:
+    34:ab:aa:52:34:f4:32:0e:c1:ed:d4:92:a1:56:88:
+    e2:73:6d:03:98:d4:4e:3b:cb:4f:2c:99:32:56:05:
+    f8:9a
+writing EC key
+-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEANKuqUjT0Mg7B7dSSoVaI4nNtA5jUTjvLTyyZMlYF+Jo=
+-----END PUBLIC KEY-----
+```
+
 ## Resources
