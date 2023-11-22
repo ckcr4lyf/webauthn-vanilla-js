@@ -54,4 +54,10 @@ MCowBQYDK2VwAyEAfP8osGAz1XmwKPJZfQnx+hYGpsLX27iHkJL7GbkHYCg=
 -----END PUBLIC KEY-----
 ```
 
+### Signature Verification (Manual)
+
+The verification step will log some values in base64 in the console.
+
+These can be put into the `verify.sh` script, which will perform signature validation as per https://w3c.github.io/webauthn/#sctn-verifying-assertion . (Note: We only really do steps 20 & 21 in the script, i.e. cryptographic validation)
+
 ## Resources
