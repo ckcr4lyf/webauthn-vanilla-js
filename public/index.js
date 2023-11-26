@@ -91,4 +91,18 @@ async function verify() {
 
     var sig64 = bytesToBase64(new Uint8Array(signature));
     console.log(`signature as b64: ${sig64}`);
+
+    await fetch('/api/verify', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        
+        body: JSON.stringify({
+            cData: c64,
+            authData: auth64,
+            sign: sig64,
+        })
+    });
+
 }
