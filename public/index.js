@@ -32,10 +32,16 @@ async function register() {
     console.log(`ID is: ${bytesToBase64(new Uint8Array(credential.rawId))}`);
     console.log(`Public key is: ${bytesToBase64(new Uint8Array(credential.response.getPublicKey()))}`);
 
-    var attestationObject = cbor.decodeAllSync(credential.response.attestationObject);
-    console.log(attestationObject);
-
-    var authData = attestationObject[0].authData;
+    await fetch('/api/register', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            id: bytesToBase64(new Uint8Array(credential.rawId)),
+            key: bytesToBase64(new Uint8Array(credential.response.getPublicKey())),
+        })
+    });
 
     // First 32 (0, 32) bytes are SHA256 of rpId (e.g. "localhost")
     // 33rd byte (32, 33) is flags
