@@ -37,8 +37,6 @@ async function register() {
 
     var authData = attestationObject[0].authData;
 
-    // TODO: POST ID, pubkey, password to backend
-
     // First 32 (0, 32) bytes are SHA256 of rpId (e.g. "localhost")
     // 33rd byte (32, 33) is flags
     // (33, 37) is sign count
