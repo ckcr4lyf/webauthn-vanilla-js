@@ -53,9 +53,18 @@ async function register() {
 }
 
 async function verify() {
-    var challenge = document.getElementById("challenge_v");
-    var encoder = new TextEncoder();
-    var challengeBytes = encoder.encode(challenge.value);
+
+    // Get challenge
+    var res = await fetch('/api/challenge', {
+        method: "GET",
+    });
+
+    var data = JSON.parse(await res.text());
+
+    // var challenge = document.getElementById("challenge_v");
+    // var encoder = new TextEncoder();
+    // var challengeBytes = encoder.encode(challenge.value);
+    var challengeBytes = base64ToBytes(data.challenge);
     console.log(`Challenge is`, challengeBytes);
 
     let cc = await navigator.credentials.get({
